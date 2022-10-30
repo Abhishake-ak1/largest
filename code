@@ -1,0 +1,45 @@
+// C++ program to find largest BST in a Binary Tree.
+#include <bits/stdc++.h>
+using namespace std;
+
+/* A binary tree node has data,
+pointer to left child and a
+pointer to right child */
+struct Node
+{
+	int data;
+	struct Node* left;
+	struct Node* right;
+	Node(int val)
+	{
+		this->data = val;
+		left = NULL;
+		right = NULL;
+	}
+};
+
+
+int largestBSTBTutil(Node *root)
+{
+	return largestBSTBT(root)[2];
+}
+
+// Driver Function
+int main() {
+
+	/* Let us construct the following Tree
+		50
+	/ \
+	75 45
+	/
+	45 */
+
+	struct Node *root = new Node(50);
+	root->left = new Node(75);
+	root->right = new Node(45);
+	root->left->left = new Node(40);
+	printf(" Size of the largest BST is %d\n", largestBSTBTutil(root));
+	return 0;
+}
+
+// This Code is cuntributed by Ajay Makvana
